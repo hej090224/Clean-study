@@ -24,17 +24,17 @@ public class BoardController {
         return boardUseCase.getBoards();
     }
 
-    @GetMapping("load/{id}")
+    @GetMapping("/load/{id}")
     public Board getBoard(@PathVariable Long id) {
         return boardUseCase.getBoard(id);
     }
 
-    @PutMapping("edit/{id}")
+    @PutMapping("/edit/{id}")
     public Board updateBoard(@PathVariable Long id, @RequestBody Board request) {
         return boardUseCase.updateBoard(id, request.getTitle(), request.getContent());
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteBoard(@PathVariable Long id) {
         boardUseCase.deleteboard(id);
     }
